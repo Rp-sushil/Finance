@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="thead-light">
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Share</th>
+      <th scope="col">Price</th>
+      <th scope="col">Transacted</th>
+    </tr>
+  </thead>
+    {% for row in data %}
+    <tbody>
+        <tr>
+          <th scope="row">{{ row["symbol"] }}</th>
+          <td>{{ row["share"] }}</td>
+          <td>{{ row["price"] }}</td>
+          <td>{{ row["time"] }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+    </table>
+
+{% endblock %}
